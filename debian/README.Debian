@@ -1,0 +1,8 @@
+Druid for Debian
+----------------
+
+This package is created from the release tarballs provided from Druid.io.
+It does not build Druid from source.  This repository was
+created using git-import-orig:
+
+git-import-orig -u 0.9.0 --upstream-branch=master --debian-branch=debian ../druid-0.9.0-bin.tar.gz
