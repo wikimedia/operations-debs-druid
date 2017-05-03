@@ -5,4 +5,19 @@ This package is created from the release tarballs provided from Druid.io.
 It does not build Druid from source.  This repository was
 created using git-import-orig:
 
-git-import-orig -u 0.9.0 --upstream-branch=master --debian-branch=debian ../druid-0.9.0-bin.tar.gz
+  git-import-orig -u 0.9.0 --upstream-branch=master --debian-branch=debian ../druid-0.9.0-bin.tar.gz
+
+You should be able to import a new upstream release using the same command again.
+
+Once you've imported, you need to explicitly declare the binary jars that need to be included
+in the package.  The following command should do the trick.
+
+find {debian,extensions,hadoop-dependencies,lib} -name "*.jar" > debian/source/include-binaries
+
+
+Finally, to build --include-removal needs to be passed to dpkg-source so that any removed binaries
+will be removed from the source package.  You can do so by passing --source-option="--include-removal" to git-buildpackage or dpkg-buildpackage.  On a Wikimedia
+build server:
+
+  GIT_PBUILDER_AUTOCONF=no DIST=jessie WIKIMEDIA=yes git-buildpackage -sa -us -uc --git-builder=git-pbuilder --source-option="--include-removal"
+

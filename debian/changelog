@@ -1,3 +1,9 @@
+druid (0.10.0-1~jessie1) jessie-wikimedia; urgency=low
+
+  * Upstream release 0.10.0
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Fri, 3 May 2017 16:33:00 +0000
+
 druid (0.9.0-2~jessie1) jessie-wikimedia; urgency=low
 
   * Fix middleManager -> middlemanager for config directory and log files
