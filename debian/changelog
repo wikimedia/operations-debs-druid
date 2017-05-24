@@ -1,3 +1,10 @@
+druid (0.10.0-2~jessie1) jessie-wikimedia; urgency=low
+
+  * Fix for mysql-metadata-storage extension version
+  * Specify dependency on druid-common (= 0.10.0) to make sure druid-common is updated
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Wed, 24 May 2017 14:35:00 +0000
+
 druid (0.10.0-1~jessie1) jessie-wikimedia; urgency=low
 
   * Upstream release 0.10.0
