@@ -5,19 +5,29 @@ This package is created from the release tarballs provided from Druid.io.
 It does not build Druid from source.  This repository was
 created using git-import-orig:
 
-  git-import-orig -u 0.9.0 --upstream-branch=master --debian-branch=debian ../druid-0.9.0-bin.tar.gz
+  DRUID_VERSION=0.10.0
+  git-import-orig -u $DRUID_VERSION --upstream-branch=master --debian-branch=debian ../druid-$DRUID_VERSION-bin.tar.gz
 
 You should be able to import a new upstream release using the same command again.
 
-Once you've imported, you need to explicitly declare the binary jars that need to be included
+The mysql-metadata-storage is not packaged with druid for licensing reasons, and needs to be
+manually downloaded and added to debian/extensions:
+
+  cd debian/extensions
+  wget http://static.druid.io/artifacts/releases/mysql-metadata-storage-$DRUID_VERSION.tar.gz
+  tar -xvzf mysql-metadata-storage-$DRUID_VERSION.tar.gz
+  rm mysql-metadata-storage-$DRUID_VERSION.tar.gz
+  cd ../..
+
+Once you've imported the new druid tarball and mysql-metadata-storage extension jars,
+you need to explicitly declare all binary jars that need to be included
 in the package.  The following command should do the trick.
 
-find {debian,extensions,hadoop-dependencies,lib} -name "*.jar" > debian/source/include-binaries
-
+find {debian,extensions,hadoop-dependencies,lib} -name "*.jar" | sort > debian/source/include-binaries
 
 Finally, to build --include-removal needs to be passed to dpkg-source so that any removed binaries
-will be removed from the source package.  You can do so by passing --source-option="--include-removal" to git-buildpackage or dpkg-buildpackage.  On a Wikimedia
-build server:
+will be removed from the source package.  You can do so by passing --source-option="--include-removal"
+to git-buildpackage or dpkg-buildpackage.  On a Wikimedia build server:
 
   GIT_PBUILDER_AUTOCONF=no DIST=jessie WIKIMEDIA=yes git-buildpackage -sa -us -uc --git-builder=git-pbuilder --source-option="--include-removal"
 
