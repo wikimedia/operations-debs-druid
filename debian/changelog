@@ -1,0 +1,17 @@
+druid (0.9.2-1~jessie1) jessie-wikimedia; urgency=low
+
+  * 0.9.2 release
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Tue, 01 Aug 2017 16:04:29 +0000
+
+druid (0.9.0-2~jessie1) jessie-wikimedia; urgency=low
+
+  * Fix middleManager -> middlemanager for config directory and log files
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Fri, 27 May 2016 13:40:26 +0000
+
+druid (0.9.0-1) jessie-wikimedia; urgency=low
+
+  * Initial debianization
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Thu, 5 May 2016 22:05:05 +0000
