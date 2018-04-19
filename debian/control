@@ -2,8 +2,9 @@ Source: druid
 Section: misc
 Priority: optional
 Maintainer: Andrew Otto <otto@wikimedia.org>
-Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.3
+Uploaders: Luca Toscano <ltoscano@wikimedia.org>
+Build-Depends: debhelper (>= 9), dh-systemd
+Standards-Version: 3.9.8
 Homepage: http://druid.io
 
 Package: druid-common

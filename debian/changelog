@@ -1,7 +1,17 @@
+druid (0.10.0-3~jessie1) jessie-wikimedia; urgency=low
+
+  * Add myself to Uploaders.
+  * Updated standards to 3.9.8.
+  * Fixed line too long in changelog.
+  * Removed init.d support.
+
+ -- Luca Toscano (WMF) <ltoscano@wikimedia.org>  Thu, 19 Apr 2018 14:35:00 +0000
+
 druid (0.10.0-2~jessie1) jessie-wikimedia; urgency=low
 
   * Fix for mysql-metadata-storage extension version
-  * Specify dependency on druid-common (= 0.10.0) to make sure druid-common is updated
+  * Specify dependency on druid-common (= 0.10.0) to
+    make sure druid-common is updated.
 
  -- Andrew Otto (WMF) <otto@wikimedia.org>  Wed, 24 May 2017 14:35:00 +0000
 

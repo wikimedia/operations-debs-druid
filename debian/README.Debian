@@ -27,7 +27,10 @@ find {debian,extensions,hadoop-dependencies,lib} -name "*.jar" | sort > debian/s
 
 Finally, to build --include-removal needs to be passed to dpkg-source so that any removed binaries
 will be removed from the source package.  You can do so by passing --source-option="--include-removal"
-to git-buildpackage or dpkg-buildpackage.  On a Wikimedia build server:
+to git-buildpackage or dpkg-buildpackage. On a Wikimedia build server:
 
-  GIT_PBUILDER_AUTOCONF=no DIST=jessie WIKIMEDIA=yes git-buildpackage -sa -us -uc --git-builder=git-pbuilder --source-option="--include-removal"
+  git checkout master
+  git tag upstream/$version-here
+  git checkout debian
+  GIT_PBUILDER_AUTOCONF=no DIST=jessie WIKIMEDIA=yes gbp buildpackage -sa -us -uc --git-builder=git-pbuilder --source-option="--include-removal"
 
