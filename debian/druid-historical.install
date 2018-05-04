@@ -1,3 +1,0 @@
-debian/etc/druid/historical/env.sh etc/druid/historical
-debian/etc/druid/historical/log4j2.xml etc/druid/historical
-debian/etc/druid/historical/runtime.properties etc/druid/historical

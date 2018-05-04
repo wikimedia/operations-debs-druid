@@ -1,3 +1,0 @@
-debian/etc/druid/overlord/env.sh etc/druid/overlord
-debian/etc/druid/overlord/log4j2.xml etc/druid/overlord
-debian/etc/druid/overlord/runtime.properties etc/druid/overlord
