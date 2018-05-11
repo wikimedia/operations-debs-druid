@@ -1,3 +1,10 @@
+druid (0.11.0-1) jessie-wikimedia; urgency=low
+
+  * Upstream release 0.11.0.
+  * Drop the ~jessie postfix.
+
+ -- Luca Toscano (WMF) <ltoscano@wikimedia.org>  Fri, 4 May 2018 14:35:00 +0000
+
 druid (0.10.0-3~jessie1) jessie-wikimedia; urgency=low
 
   * Add myself to Uploaders.
