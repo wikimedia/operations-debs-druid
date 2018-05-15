@@ -1,3 +1,13 @@
+druid (0.11.0-2) jessie-wikimedia; urgency=low
+
+  * Add the druid-parquet-extensions (community) version 0.10
+    (0.11 uses a more up to date version of Avro that conflicts).
+  * Add 'adduser' to the druid-common's dependencies.
+  * Correct a typo in a description (control).
+  * Fix a lintian error due to Druid Common used as description.
+
+ -- Luca Toscano (WMF) <ltoscano@wikimedia.org>  Tue, 15 May 2018 14:35:00 +0000
+
 druid (0.11.0-1) jessie-wikimedia; urgency=low
 
   * Upstream release 0.11.0.
