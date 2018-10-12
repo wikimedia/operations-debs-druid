@@ -1,3 +1,11 @@
+druid (0.12.3-1) stretch-wikimedia; urgency=low
+
+  * Upstream release 0.12.3
+  * Add druid-parquet-extensions (community) version 0.12.3
+  * add mysql extension version 0.12.3
+
+ -- Luca Toscano (WMF) <ltoscano@wikimedia.org>  Fri, 12 Oct 2018 14:35:00 +0000
+
 druid (0.11.0-3) jessie-wikimedia; urgency=low
 
   * Drop mysql-metadata-storage-0.10.0.jar from debian/extensions.
