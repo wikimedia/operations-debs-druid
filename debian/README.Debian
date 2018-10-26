@@ -5,8 +5,8 @@ This package is created from the release tarballs provided from Druid.io.
 It does not build Druid from source.  This repository was
 created using git-import-orig:
 
-  DRUID_VERSION=0.10.0
-  git-import-orig -u $DRUID_VERSION --upstream-branch=master --debian-branch=debian ../druid-$DRUID_VERSION-bin.tar.gz
+  DRUID_VERSION=0.12.3
+  gbp import-orig -u $DRUID_VERSION --upstream-branch=master --debian-branch=debian ../druid-$DRUID_VERSION-bin.tar.gz
 
 You should be able to import a new upstream release using the same command again.
 
@@ -18,6 +18,11 @@ manually downloaded and added to debian/extensions:
   tar -xvzf mysql-metadata-storage-$DRUID_VERSION.tar.gz
   rm mysql-metadata-storage-$DRUID_VERSION.tar.gz
   cd ../..
+
+Other extensions like the parquet one may be provided by the community and not shipped with Druid itself,
+so this seems to be the quickest way to retrieve the jars:
+
+http://druid.io/docs/latest/operations/pull-deps.html
 
 Once you've imported the new druid tarball and mysql-metadata-storage extension jars,
 you need to explicitly declare all binary jars that need to be included
@@ -32,5 +37,5 @@ to git-buildpackage or dpkg-buildpackage. On a Wikimedia build server:
   git checkout master
   git tag upstream/$version-here
   git checkout debian
-  GIT_PBUILDER_AUTOCONF=no DIST=jessie WIKIMEDIA=yes gbp buildpackage -sa -us -uc --git-builder=git-pbuilder --source-option="--include-removal"
+  GIT_PBUILDER_AUTOCONF=no DIST=stretch WIKIMEDIA=yes gbp buildpackage -sa -us -uc --git-builder=git-pbuilder --source-option="--include-removal"
 
