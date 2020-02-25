@@ -1,2 +1,2 @@
 etc/druid/middlemanager
-var/lib/druid/task
+srv/druid/task

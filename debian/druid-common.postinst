@@ -19,7 +19,7 @@ case "$1" in
                 --shell /bin/false \
                 druid >/dev/null 2>/dev/null || :
 
-            chown -R druid:druid /var/lib/druid /var/log/druid
+            chown -R druid:druid /srv/druid /var/log/druid
         fi
     ;;
 

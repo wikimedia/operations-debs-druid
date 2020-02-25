@@ -8,7 +8,7 @@ set -e
 
 case "$1" in
     configure|reconfigure)
-        chown druid:druid /var/lib/druid/task
+        chown druid:druid /srv/druid/task
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

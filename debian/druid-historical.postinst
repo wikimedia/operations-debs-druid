@@ -8,7 +8,7 @@ set -e
 
 case "$1" in
     configure|reconfigure)
-        chown druid:druid /var/lib/druid/segment-cache
+        chown druid:druid /srv/druid/segment-cache
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

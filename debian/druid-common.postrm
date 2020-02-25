@@ -10,7 +10,7 @@ case "$1" in
     purge)
         deluser --quiet --system druid >/dev/null || true
         deluser --quiet --group --system --only-if-empty --remove-home druid || true
-        rm -rf /var/lib/druid /var/log/druid
+        rm -rf /srv/druid /var/log/druid
         ;;
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
         ;;
