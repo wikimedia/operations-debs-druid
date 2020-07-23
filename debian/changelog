@@ -1,3 +1,12 @@
+druid (0.19.0-1) buster-wikimedia; urgency=medium
+
+  * Release upstream version 0.19.0 (built with cdh hdfs deps).
+  * Change /usr/bin/druid script to call the right classes (org.apache.etc..).
+  * Remove parquet extension (part of core extensions).
+  * Add mysql extension back (not part of core anymore).
+
+ -- Luca Toscano <ltoscano@wikimedia.org>  Thu, 23 Jul 2020 18:06:17 +0100
+
 druid (0.12.3-1.1) UNRELEASED; urgency=medium
 
   * Switch to /srv/druid (T245810)

@@ -54,8 +54,8 @@ druid_run() {
     # If HADOOP_CONF_DIR is readable, add it to the classpath.
     test -r "${HADOOP_CONF_DIR}" && CLASSPATH="${CLASSPATH}:${HADOOP_CONF_DIR}"
 
-    echo $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
-    exec $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH io.druid.cli.Main $@
+    echo $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH org.apache.druid.cli.Main $@
+    exec $JAVA $DRUID_HEAP_OPTS $DRUID_JMX_OPTS $DRUID_JVM_OPTS $DRUID_EXTRA_JVM_OPTS -cp $CLASSPATH org.apache.druid.cli.Main $@
 }
 
 # if no commands, print usage.
